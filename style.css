@@ -324,39 +324,56 @@ p {
 
 /* ----------- Section Travels ------- */
 
+.travels {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 25px;
+	color: greenyellow;
+	background-color: #246559;
+	padding: 8px;
+	border-radius: 10px;
+}
+
 .travelsCards {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
+	justify-content: space-evenly;
 	position: relative;
 	background-color: #003329;
 	overflow: hidden;
 }
 .card {
 	position: relative;
-	padding-right: 30px;
-	width: 450px;
+	width: 350px;
 	height: 750px;
-	/* perspective: 800px; */
+	perspective: 1000px;
 }
+
 .imgCard {
 	width: 100%;
 	height: 100%;
 	background-position: center;
 	background-size: cover;
 	border-radius: 15px;
+	box-shadow: 0px 0px 18px 0px rgba(141, 141, 141, 0.6);
+	border: 2px solid rgba(255, 255, 255, 0.6);
 	transition: 0.8s;
 }
 
-.one {
+.oneCard {
 	background-image: url('./pic/picCards/egipt.jpg');
 }
-.two {
+.twoCard {
 	background-image: url('./pic/picCards/azja.jpg');
 }
 .threeCard {
 	background-image: url('./pic/picCards/galapagos.jpg');
+}
+.fourCard {
+	background-image: url('./pic/picCards/anatrktyda.jpg');
 }
 
 .text {
@@ -366,6 +383,116 @@ p {
 	bottom: 0;
 	left: 0;
 	padding: 15px;
+	border-radius: 15px;
+	text-align: center;
+	background-image: linear-gradient(315deg, #fee2f8 0%, #dcf8fe 74%);
+	opacity: 0;
+	transition: 0.7s;
+}
+
+.headerCard {
+	font-size: 30px;
+	margin-top: 450px;
+	margin-bottom: 20px;
+}
+
+.textInfoCard {
+	color: black;
+}
+
+.text-one {
+	transform: rotateX(-180deg);
+}
+.text-two {
+	transform: rotateY(-180deg);
+}
+
+.card:hover .text {
+	transform: rotate(0deg);
+	opacity: 1;
+}
+
+.card:hover .oneCard {
+	transform: rotateX(180deg);
+	opacity: 0;
+}
+.card:hover .twoCard {
+	transform: rotateY(-180deg);
+	opacity: 0;
+}
+
+.card:hover .threeCard {
+	animation: up 0.8s;
+}
+.card:hover .text-three {
+	animation: down 0.8s;
+}
+
+@keyframes up {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(-60%);
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes down {
+	0% {
+		transform: translateY(0);
+		z-index: -1;
+	}
+	50% {
+		transform: translateY(60%);
+		z-index: -1;
+	}
+	100% {
+		z-index: 1;
+	}
+}
+
+.card:hover .fourCard {
+	animation: left 0.8s;
+}
+.card:hover .text-four {
+	animation: right 0.8s;
+}
+
+@keyframes left {
+	0% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	50% {
+		transform: translateX(-60%);
+	}
+	80% {
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes right {
+	0% {
+		transform: translateX(0);
+		z-index: -1;
+	}
+	50% {
+		transform: translateX(60%);
+		z-index: -1;
+	}
+	100% {
+		z-index: 1;
+	}
 }
 
 /* ----------- Section Opinions ------- */
